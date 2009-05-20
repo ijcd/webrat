@@ -16,6 +16,9 @@ module Webrat
         when :rails
           require "webrat/selenium/rails_application_server"
           RailsApplicationServer.new.boot
+        when :external                                                                           
+            # noop -- the server should already be running                                         
+            puts "Using external application server... make sure it is running."  
         else
           raise WebratError.new(<<-STR)
 Unknown Webrat application_framework: #{Webrat.configuration.application_framework.inspect}

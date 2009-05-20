@@ -2,7 +2,8 @@ module Webrat
   module Selenium
 
     class SeleniumRCServer
-      
+
+      require 'webrat/selenium/silence_stream'      
       include Webrat::Selenium::SilenceStream
 
       def self.boot
