@@ -48,6 +48,10 @@ module Webrat
 
     webrat_deprecate :fills_in, :fill_in
 
+    def attach_file(field_locator, path, content_type = nil)
+      fill_in(field_locator, :with => path)
+    end
+
     def response
       SeleniumResponse.new(self, response_body)
     end
